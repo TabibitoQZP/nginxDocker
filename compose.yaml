@@ -1,0 +1,9 @@
+services:
+    nginx:
+        restart: "unless-stopped"
+        network_mode: "host"
+        volumes:
+            - ./templates:/etc/nginx/templates
+            - ./nginx.conf:/etc/nginx/nginx.conf
+            - ./otherfile:/etc/nginx/otherfile
+        image: nginx
